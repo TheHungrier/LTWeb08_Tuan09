@@ -1,0 +1,33 @@
+﻿@model Bai01.Models.THELOAITIN
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Bạn có muốn xóa thông tin này không?</h3>
+<div>
+    <h4>THELOAITIN</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TENTHELOAI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TENTHELOAI)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm("Delete", "Home", FormMethod.Post)) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
