@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Trang chủ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<main class="container text-center mt-5">
+    <h1 class="display-4 fw-bold text-primary mb-4">Chào mừng đến với hệ thống Quản lý Nhân sự</h1>
+    <p class="lead text-muted mb-5">
+        Đây là trang quản lý nhân viên và phòng ban.
+        Bạn có thể xem danh sách phòng ban, thêm nhân viên, hoặc xem chi tiết từng phòng ban.
+    </p>
+
+    <a href="@Url.Action("SideBarDept", "Home")" class="btn btn-primary btn-lg">
+        Xem danh sách phòng ban
+    </a>
+</main>

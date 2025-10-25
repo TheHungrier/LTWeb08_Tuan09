@@ -1,0 +1,82 @@
+﻿@model Bai2_LTWeb.Models.SACH
+
+@{
+    ViewBag.Title = "ChitietSach";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>THÔNG TIN CHI TIẾT SÁCH</h2>
+
+<div>
+    <h4>SACH</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên sách:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TENSACH)
+        </dd>
+
+        <dt>
+            Giá bán:
+        </dt>
+
+        <dd>
+            @string.Format("{0:0,0}", Model.GIABAN) VNĐ
+        </dd>
+
+        <dt>
+            Mô tả:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MOTA)
+        </dd>
+
+        <dt>
+            Ảnh bìa:
+        </dt>
+
+        <dd>
+            <img src="@Url.Content("~/Images/" + Model.ANHBIA)" width="100"/>
+        </dd>
+
+        <dt>
+            Ngày cập nhật:
+        </dt>
+
+        <dd>
+            @string.Format("{0:dd/MM/yyyy}", Model.NGAYCAPNHAT)
+        </dd>
+
+        <dt>
+            Số lượng tồn:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SOLUONGTON)
+        </dd>
+
+        <dt>
+            Chủ đề:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CHUDE.TENCHUDE)
+        </dd>
+
+        <dt>
+            Nhà xuất bản:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NHAXUATBAN.TENNXB)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Sửa", "SuaSach", new { id = Model.MASACH }) |
+    @Html.ActionLink("Trở về", "DanhMucSach")
+</p>
